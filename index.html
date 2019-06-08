@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tiffany Leong</title>
+	<meta name="description" content="Hi, I'm Tiffany! I’m a computer science student &amp; an aspiring software developer" />
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#44c2a9">
+	<link rel="shortcut icon" href="favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#44c2a9">
+	<meta name="msapplication-config" content="favicon/browserconfig.xml">
+	<meta name="theme-color" content="#FFFFFF">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<nav>
+		<div class="container navbar">
+			<a href="#"><img class="logo" src="img/tiffany-logo.svg" alt="Tiffany"></a>
+			<ul class="nav-links">
+				<li><a href="#about">About</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#resume">Resume</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<header id="home">
+		<div class="centre-wrapper">
+			<img class="shapes-lg" src="img/shapes-lg.svg" alt="">
+			<img class="shapes-sm" src="img/shapes-sm.svg" alt="">
+			<div class="main-wrapper">
+				<h1>Hi, I'm Tiffany!</h1>
+				<p class="lead">I’m a computer science student &amp; an aspiring software developer</p>
+			</div>
+		</div>
+	</header>
+
+	<section id="about">
+		<div class="grey-wrapper">
+			<div class="container grid">
+				<img class="about-img" src="img/tiffany-photo.jpg" alt="Circular Photo of Tiffany Leong">
+				<div class="main-wrapper">
+					<h2 class="lowerbar">A bit about myself...</h2>
+					<p>I love to learn and have been teaching myself how to code since I was 13. I am especially interested in learning about front end web development. My dream is to build beautiful and functional software that'll improve people’s lives.</p>
+					<br>
+					<p>When I’m not programming, I like to read books and play tetris with my calendar to fit more things into my day.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="portfolio">	
+		<div class="container">
+			<h2 class="lowerbar">Portfolio</h2>
+
+			<div class="portfolio-boxes grid">
+				<div>
+					<img class="screenshot" src="img/news-feed.jpg" alt="Screenshot of News Feed">
+					<h4>News Feed</h4>
+					<p>
+						Languages: JavaScript, HTML, CSS<br>
+						Tech: jQuery, ReactJS
+					</p>
+					<div class="portfolio-links">
+						<a class="btn btn-blue" href="https://rtkleong10.github.io/News-Feed/" target="_blank" rel="noopener">
+							View →
+						</a>
+						<a href="https://github.com/rtkleong10/News-Feed/" target="_blank" rel="noopener">
+							<img src="img/github-dark.svg" alt="View on GitHub">
+						</a>
+					</div>
+				</div>
+				<div>
+					<img class="screenshot" src="img/productivity-app.jpg" alt="Screenshot of Productivity App">
+					<h4>Productivity App</h4>
+					<p>
+						Languages: JavaScript, HTML, CSS<br>
+						Tech: ReactJS, Firebase
+					</p>
+					<div class="portfolio-links">
+						<a class="btn btn-blue" href="https://rtkleong10.github.io/productivity-app/" target="_blank" rel="noopener">
+							View →
+						</a>
+						<a href="https://github.com/rtkleong10/productivity-app/" target="_blank" rel="noopener">
+							<img src="img/github-dark.svg" alt="View on GitHub">
+						</a>
+					</div>
+				</div>
+				<div>
+					<img class="screenshot" src="img/lets-go-on-an-adventure.jpg" alt="Screenshot of Let's Go On An Adventure">
+					<h4>Let's Go On An Adventure!</h4>
+					<p>
+						Languages: JavaScript, HTML, CSS<br>
+						Tech: Twine
+					</p>
+					<div class="portfolio-links">
+						<a class="btn btn-blue" href="https://rtkleong10.github.io/Let-s-Go-On-An-Adventure-/" target="_blank" rel="noopener">
+							View →
+						</a>
+						<a href="https://github.com/rtkleong10/Let-s-Go-On-An-Adventure-" target="_blank" rel="noopener">
+							<img src="img/github-dark.svg" alt="View on GitHub">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="resume">
+		<div class="grey-wrapper">
+			<div class="container grid">
+				<div class="main-wrapper">
+					<h2 class="lowerbar">Resume</h2>
+					<a class="download-btn" href="pdf/LeongKoRixieTiffany_Resume.pdf" target="_blank">
+						<img src="img/download.svg" alt="Download Resume">
+					</a>
+				</div>
+				<div class="centre-img-box">
+					<img class="resume-img" src="img/tiffany-resume.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<p>&copy; Tiffany Leong 2019</p>
+			<ul>
+				<li>
+					<a href="https://github.com/rtkleong10" target="_blank" rel="noopener">
+						<img src="img/github.svg" alt="GitHub">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/rixietiffany/" target="_blank" rel="noopener">
+						<img src="img/linkedin.svg" alt="LinkedIn">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	<script>
+		// Update navbar to be fixed or not
+		function updateNav() {
+			let nav = document.getElementsByTagName("nav")[0];
+
+			if (window.scrollY > 200)
+				nav.classList.add("fixed");
+			else
+				nav.classList.remove("fixed");
+		}
+
+		window.onscroll = updateNav;
+
+		window.onload = () => {
+
+			updateNav();
+
+
+			// Blur
+			let aTags = document.getElementsByTagName("a");
+
+			for (let i = 0; i < aTags.length; i++) {
+
+				let aTag = aTags[i];
+				aTag.addEventListener("click", () => {
+					aTag.blur();
+				});
+			}
+		};
+	</script>
+</body>
+</html>
