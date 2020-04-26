@@ -1,0 +1,544 @@
+/* ---------- GLOBAL ---------- */
+/* colours */
+:root {
+	--green: #44C2A9;
+	--light-grey: #DFDFDF;
+	--dark-grey: #444444;
+	--white: #FFFFFF;
+	--blue: #6CA4D7;
+}
+
+
+/* font */
+@font-face {
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('../font/ubuntu/ubuntu-v13-latin-700.eot'); /* IE9 Compat Modes */
+	src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+		url('../font/ubuntu/ubuntu-v13-latin-700.eot?#iefix') format('embedded-opentype'),
+		url('../font/ubuntu/ubuntu-v13-latin-700.woff2') format('woff2'),
+		url('../font/ubuntu/ubuntu-v13-latin-700.woff') format('woff'),
+		url('../font/ubuntu/ubuntu-v13-latin-700.ttf') format('truetype'),
+		url('../font/ubuntu/ubuntu-v13-latin-700.svg#Ubuntu') format('svg');
+}
+
+@font-face {
+	font-family: 'Avenir Next';
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+	src: local('Avenir Next'), local('Avenir-Next'),
+		url("../font/avenir-next/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'Avenir Next';
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+	src: local('Avenir Next Bold'), local('Avenir-Next-Bold'),
+		url("../font/avenir-next/AvenirNextLTPro-Bold.otf") format("opentype");
+}
+
+
+/* body */
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body {
+	color: var(--dark-grey);
+	font-family: "Avenir Next", Arial, sans-serif;
+}
+
+
+/* typography */
+h1 {
+	font-family: "Ubuntu", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 64px;
+}
+
+h2 {
+	font-family: "Ubuntu", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 32px;
+}
+
+h2.lowerbar {
+	position: relative;
+	padding-bottom: 30px;
+	margin-bottom: 40px;
+}
+
+h2.lowerbar:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 75px;
+	height: 10px;
+	background-color: var(--green);
+}
+
+h4 {
+	font-family: "Ubuntu", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+p {
+	font-size: 18px;
+}
+
+p.lead {
+	font-size: 28px;
+}
+
+
+/* elements */
+a {
+	display: inline-block;
+	color: var(--dark-grey);
+	text-decoration: none;
+	transition: all 0.3s ease-out;
+}
+
+a:hover, a:focus {
+	opacity: 0.5;
+}
+
+img {
+	display: block;
+}
+
+li {
+	list-style-type: none;
+}
+
+
+
+/* ---------- LAYOUT ---------- */
+/* section */
+section {
+	padding: 150px 0;
+}
+
+@media (min-width: 576px) {
+	section {
+		padding: 200px 0;
+	}
+}
+
+
+/* container */
+.container {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1300px;
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 80%;
+	}
+}
+
+
+/* grid */
+@media (min-width: 576px) {
+	.grid {
+		display: grid;
+		grid-column-gap: 40px;
+		grid-template-columns: repeat(12, 1fr);
+	}
+}
+
+
+/* grey wrapper*/
+.grey-wrapper {
+	background-color: var(--light-grey);
+}
+
+.btn {
+	display: inline-block;
+	border-radius: 25px;
+	padding: 10px 30px;
+	color: var(--white);
+	font-family: "Ubuntu", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	border: 2px solid;
+	box-sizing: border-box;
+}
+
+.btn:hover, .btn:focus {
+	opacity: 1;
+	background-color: transparent;
+}
+
+.btn-blue {
+	background: var(--blue);
+	border-color: var(--blue);
+}
+
+.btn-blue:hover, .btn-blue:focus {
+	color: var(--blue);
+}
+
+
+/* ---------- NAVBAR ---------- */
+/* navbar*/
+nav {
+	position: absolute;
+	width: 100vw;
+	top: 0;
+	z-index: 5;
+	padding: 20px 0;
+	background-color: var(--white);
+}
+
+nav.fixed {
+	position: fixed;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+	animation: sliding-menu 0.3s ease-out;
+}
+
+@keyframes sliding-menu {
+	from {transform: translateY(-100%);}
+	to {transform: translateY(0);}
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+
+@media (min-width: 576px) {
+	.navbar {
+		flex-direction: row;
+	}
+}
+
+
+/* logo */
+.logo {
+	margin-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+	.logo {
+		margin-bottom: 0;
+	}
+}
+
+/* navlinks */
+.nav-links {
+	text-align: center;
+}
+
+.nav-links li {
+	display: inline-block;
+	font-size: 18px;
+	margin: 0 5px;
+}
+
+.nav-links a {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+@media (min-width: 576px) {
+	.nav-links {
+		text-align: right;
+	}
+	
+	.nav-links li {
+		font-size: 20px;
+		margin-right: 0;
+		margin-left: 20px;
+	}
+}
+
+@media (min-width: 768px) {
+	.nav-links li {
+		margin-left: 40px;
+	}
+}
+
+
+
+/* ---------- HOME ---------- */
+#home {
+	position: relative;
+	padding: 160px 0;
+}
+
+#home .centre-wrapper {
+	max-width: 600px;
+	margin: auto;
+	height: fit-content;
+	height: -moz-fit-content;
+}
+
+#home .centre-wrapper > * {
+	margin: auto;
+}
+
+@media (min-width: 992px) {
+	#home {
+		height: 100vh;
+		max-height: 800px;
+		padding-top: 0;
+	}
+
+	#home .centre-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+/* main wrapper */
+#home .main-wrapper {
+	width: 90%;
+	text-align: center;
+}
+
+@media (min-width: 992px) {
+	#home .main-wrapper {
+		width: 100%;
+	}
+}
+
+/* shapes */
+#home .shapes-sm {
+	width: 90%;
+	max-width: 350px;
+}
+
+#home .shapes-lg {
+	display: none;
+}
+
+@media (min-width: 992px) {
+	#home .shapes-sm {
+		display: none;
+	}
+
+	#home .shapes-lg {
+		display: block;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    transform: translate(70%, -70%);
+	}	
+}
+
+
+
+/* ---------- ABOUT ---------- */
+/* grey background */
+#about .grey-wrapper {
+	padding: 80px 0;
+}
+
+
+/* grid */
+#about .grid {
+	align-items: center;
+}
+
+#about .grid :nth-child(1) {
+	grid-column: 1 / span 4;
+	justify-self: end;
+}
+
+#about .grid :nth-child(2) {
+	grid-column: span 8;
+}
+
+@media (min-width: 992px) {
+	#about .grid :nth-child(1) {
+		grid-column: 2 / span 3;
+		justify-self: end;
+	}
+
+	#about .grid :nth-child(2) {
+		grid-column: span 7;
+	}
+}
+
+
+/* about img */
+#about .about-img {
+	max-width: 200px;
+	width: 100%;
+	border: 5px solid var(--white);
+	border-radius: 50%;
+	box-sizing: border-box;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+	margin-bottom: 40px;
+}
+
+@media (min-width: 576px) {
+	#about .about-img {
+		margin-bottom: 0;
+	}
+}
+
+
+
+/* ---------- PORTFOLIO ---------- */
+/* grid */
+#portfolio .grid > * {
+	grid-column: span 6;
+	max-width: 350px;
+	margin: 0 auto 100px;
+}
+
+@media (min-width: 992px) {
+	#portfolio .grid > * {
+		grid-column: span 4;
+		margin-bottom: 0;
+	}
+}
+
+
+/* portfolio img*/
+#portfolio .portfolio-boxes .screenshot {
+	width: 100%;
+	margin-bottom: 20px;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* portfolio link */
+#portfolio .portfolio-links {
+	margin-top: 20px;
+	display: flex;
+}
+
+#portfolio .portfolio-links a {
+	margin-right: 20px;
+}
+
+
+
+/* ---------- RESUME ---------- */
+/* grey wrapper */
+#resume .grey-wrapper {
+	padding: 40px 0;
+}
+
+@media (min-width: 576px) {
+	#resume .grey-wrapper {
+		padding: 100px 0;
+	}
+}
+
+
+/* grid */
+#resume .grid {
+	align-items: center;
+}
+
+#resume .grid :nth-child(1) {
+	grid-column: 2 / span 4;
+}
+
+#resume .grid :nth-child(2) {
+	grid-column: span 7;
+}
+
+@media (min-width: 992px) {
+	#resume .grid :nth-child(1) {
+		grid-column: 3 / span 3;
+	}
+
+	#resume .grid :nth-child(2) {
+		grid-column: span 5;
+	}
+}
+
+
+/* image */
+#resume .resume-img {
+	margin-top: 40px;
+	width: 100%;
+	max-width: 400px;
+	border: 2px solid var(--dark-grey);
+	box-sizing: border-box;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 576px) {
+	#resume .resume-img {
+		margin-top: -50%;
+		margin-bottom: -50%;
+	}
+}
+
+
+
+/* ---------- FOOTER ---------- */
+/* footer */
+footer {
+	color: var(--white);
+	padding: 15px 0;
+	background-color: var(--dark-grey);
+}
+
+
+/* container */
+footer .container {
+	display: flex;
+	flex-direction: column-reverse;
+	text-align: center;
+}
+
+@media (min-width: 576px) {
+	footer .container {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+
+/* footer items */
+footer .container ul {
+	margin-bottom: 10px;
+}
+
+footer .container li {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+footer .container a {
+	color: var(--white);
+}
+
+@media (min-width: 576px) {
+	footer .container ul {
+		margin-bottom: 0;
+	}
+
+	footer .container li {
+		margin-right: 0;
+		margin-left: 10px;
+	}
+}
