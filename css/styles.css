@@ -403,19 +403,26 @@ nav.fixed {
 
 /* ---------- PORTFOLIO ---------- */
 /* grid */
+#portfolio .grid {
+	margin-bottom: -100px;
+}
+
 #portfolio .grid > * {
-	grid-column: span 6;
-	max-width: 350px;
+	grid-column: span 12;
+	max-width: 600px;
 	margin: 0 auto 100px;
 }
 
 @media (min-width: 992px) {
 	#portfolio .grid > * {
-		grid-column: span 4;
-		margin-bottom: 0;
+		grid-column: span 6;
 	}
 }
 
+/* Portfolio headers */
+.portfolio-boxes .portfolio-header {
+	margin-bottom: 10px;
+}
 
 /* portfolio img*/
 #portfolio .portfolio-boxes .screenshot {
