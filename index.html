@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tiffany Leong</title>
-	<meta name="description" content="Hi, I'm Tiffany! I’m a computer science student &amp; an aspiring software developer" />
+	<meta name="description"
+		content="Hi, I'm Tiffany! I’m a computer science student &amp; an aspiring software developer" />
 	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -14,155 +15,214 @@
 	<meta name="msapplication-TileColor" content="#44c2a9">
 	<meta name="msapplication-config" content="favicon/browserconfig.xml">
 	<meta name="theme-color" content="#FFFFFF">
+	<link rel="stylesheet" href="vendor/aos/aos.css">
+	<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
 	<nav>
 		<div class="container navbar">
-			<a href="#"><img class="logo" src="img/tiffany-logo.svg" alt="Tiffany"></a>
+			<a href="#" class="show-if-light">
+				<img class="logo" src="img/tiffany-logo.svg" alt="Tiffany">
+			</a>
+			<a href="#" class="show-if-dark">
+				<img class="logo" src="img/tiffany-logo-dark.svg" alt="Tiffany">
+			</a>
 			<ul class="nav-links">
-				<li><a href="#about">About</a></li>
-				<li><a href="#portfolio">Portfolio</a></li>
-				<li><a href="#resume">Resume</a></li>
+				<li>
+					<a href="#about" id="about-nav">About</a>
+				</li>
+				<li>
+					<a href="#portfolio" id="portfolio-nav">Portfolio</a>
+				</li>
+				<li>
+					<a href="#resume" id="resume-nav">Resume</a>
+				</li>
+				<li>
+					<button id="dark-mode-toggle" aria-label="Toggle dark mode">
+						<i class="show-if-dark far fa-sun"></i>
+						<i class="show-if-light far fa-moon"></i>
+					</button>
+				</li>
 			</ul>
 		</div>
 	</nav>
-
 	<header id="home">
 		<div class="centre-wrapper">
-			<img class="shapes-lg" src="img/shapes-lg.svg" alt="">
-			<img class="shapes-sm" src="img/shapes-sm.svg" alt="">
-			<div class="main-wrapper">
+			<div class="shapes-lg">
+				<img src="img/shapes-lg.svg" alt="Geometric shape decoration" data-aos="zoom-in-right"
+					data-aos-delay="300">
+			</div>
+			<div class="shapes-sm">
+				<img src="img/shapes-sm.svg" alt="Geometric shape decoration" data-aos="zoom-in-up"
+					data-aos-delay="300">
+			</div>
+			<div class="main-wrapper" data-aos="fade-up">
 				<h1>Hi, I'm Tiffany!</h1>
 				<p class="lead">I’m a computer science student &amp; an aspiring software developer</p>
 			</div>
 		</div>
 	</header>
-
 	<section id="about">
-		<div class="grey-wrapper">
-			<div class="container grid">
-				<img class="about-img" src="img/tiffany-photo.jpg" alt="Circular Photo of Tiffany Leong">
-				<div class="main-wrapper">
-					<h2 class="lowerbar">A bit about myself...</h2>
-					<p>I am a computer science undergraduate at Nanyang Technological University, Singapore. I love to learn and have been teaching myself how to code since I was 13. I am especially interested in learning about front end web development. My dream is to build beautiful and functional software that'll improve people’s lives.</p>
-					<br>
-					<p>When I’m not programming, I like to read books and play tetris with my calendar to fit more things into my day.</p>
+		<div class="container">
+			<div class="about-box" data-aos="fade-right">
+				<div class="wrapper">
+					<img class="about-img" src="img/tiffany-photo.jpg" alt="Circular Photo of Tiffany Leong">
+					<div class="about-text">
+						<h2 class="lowerbar">A bit about myself...</h2>
+						<p>I am a computer science student at Nanyang Technological University. I love to learn and have been teaching myself how to code since I was 13. My dream is to build beautiful and functional software to improve people’s lives.</p>
+						<br>
+						<p>When I’m not programming, I like to read books and play tetris with my calendar to fit more into my day.</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<section id="portfolio">	
+	<section id="portfolio">
 		<div class="container">
 			<h2 class="lowerbar">Portfolio</h2>
-
 			<div class="portfolio-boxes grid">
-				<div>
-					<img class="screenshot" src="img/portfolio/productivity-tools.gif" alt="GIF of Productivity Tools">
-					<h4 class="portfolio-header">Productivity Tools</h4>
-					<p>
-						Languages: Python, JavaScript, SCSS <br>
-						Technologies: Django Rest Framework, ReactJS
-					</p>
-					<div class="portfolio-links">
-						<a class="btn btn-blue" href="https://rtkleong10.github.io/productivity-tools-web/" rel="noopener noreferrer">
-							View →
-						</a>
-						<a href="https://github.com/rtkleong10/productivity-tools-web/" rel="noopener noreferrer">
-							<img src="img/github-dark.svg" alt="View on GitHub">
-						</a>
+				<div class="portfolio-box" data-aos="fade-up">
+					<video class="portfolio-screenshot" autoplay preload muted loop>
+						<source src="img/portfolio/productivity-tools.mp4" type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+					<div class="hidden-details">
+						<h3 class="portfolio-header">Productivity Tools</h3>
+						<p class="show-if-desktop">
+							Languages: Python, JavaScript, SCSS <br>
+							Technologies: Django Rest Framework, ReactJS
+						</p>
+						<p class="show-if-mobile">
+							DRF, ReactJS, SCSS
+						</p>
+						<div class="portfolio-links">
+							<a class="btn btn-white" href="https://rtkleong10.github.io/productivity-tools-web/"
+								rel="noopener noreferrer">
+								<i class="fas fa-external-link-alt"></i>&nbsp;
+								View
+							</a>
+							<a class="github-btn" href="https://github.com/rtkleong10/productivity-tools-web/"
+								rel="noopener noreferrer" aria-label="GitHub">
+								<i class="fab fa-github"></i>
+							</a>
+						</div>
 					</div>
 				</div>
-				<div>
-					<img class="screenshot" src="img/portfolio/decori.png" alt="Screenshot of decori">
-					<h4 class="portfolio-header">decori</h4>
-					<p>
-						Languages: HTML, SCSS<br>
-						Technologies: Figma
-					</p>
-					<div class="portfolio-links">
-						<a class="btn btn-blue" href="https://rtkleong10.github.io/decori/" rel="noopener noreferrer">
-							View →
-						</a>
-						<a href="https://github.com/rtkleong10/decori/" rel="noopener noreferrer">
-							<img src="img/github-dark.svg" alt="View on GitHub">
-						</a>
+				<div class="portfolio-box" data-aos="fade-up">
+					<img class="portfolio-screenshot" src="img/portfolio/decori.png" alt="Screenshot of decori">
+					<div class="hidden-details">
+						<h3 class="portfolio-header">decori</h3>
+						<p class="show-if-desktop">
+							Languages: HTML, SCSS<br>
+							Technologies: Figma
+						</p>
+						<p class="show-if-mobile">
+							HTML, SCSS
+						</p>
+						<div class="portfolio-links">
+							<a class="btn btn-white" href="https://rtkleong10.github.io/decori/"
+								rel="noopener noreferrer">
+								<i class="fas fa-external-link-alt"></i>&nbsp;
+								View
+							</a>
+							<a class="github-btn" href="https://github.com/rtkleong10/decori/"
+								rel="noopener noreferrer" aria-label="GitHub">
+								<i class="fab fa-github"></i>
+							</a>
+						</div>
 					</div>
 				</div>
-				<div>
-					<img class="screenshot" src="img/portfolio/news-feed.png" alt="Screenshot of News Feed">
-					<h4 class="portfolio-header">News Feed</h4>
-					<p>
-						Languages: JavaScript, HTML, CSS<br>
-						Technologies: jQuery, ReactJS
-					</p>
-					<div class="portfolio-links">
-						<a class="btn btn-blue" href="https://rtkleong10.github.io/News-Feed/" rel="noopener noreferrer">
-							View →
-						</a>
-						<a href="https://github.com/rtkleong10/News-Feed/" rel="noopener noreferrer">
-							<img src="img/github-dark.svg" alt="View on GitHub">
-						</a>
+				<div class="portfolio-box" data-aos="fade-up">
+					<img class="portfolio-screenshot" src="img/portfolio/news-feed.png" alt="Screenshot of News Feed">
+					<div class="hidden-details">
+						<h3 class="portfolio-header">News Feed</h3>
+						<p class="show-if-desktop">
+							Languages: JavaScript, HTML, CSS<br>
+							Technologies: jQuery, ReactJS
+						</p>
+						<p class="show-if-mobile">
+							jQuery, ReactJS, HTML, CSS
+						</p>
+						<div class="portfolio-links">
+							<a class="btn btn-white" href="https://rtkleong10.github.io/News-Feed/"
+								rel="noopener noreferrer">
+								<i class="fas fa-external-link-alt"></i>&nbsp;
+								View
+							</a>
+							<a class="github-btn" href="https://github.com/rtkleong10/News-Feed/"
+								rel="noopener noreferrer" aria-label="GitHub">
+								<i class="fab fa-github"></i>
+							</a>
+						</div>
 					</div>
 				</div>
-				<div>
-					<img class="screenshot" src="img/portfolio/lets-go-on-an-adventure.gif" alt="Screenshot of Let's Go On An Adventure">
-					<h4 class="portfolio-header">Let's Go On An Adventure!</h4>
-					<p>
-						Languages: JavaScript, HTML, CSS<br>
-						Technologies: Twine
-					</p>
-					<div class="portfolio-links">
-						<a class="btn btn-blue" href="https://rtkleong10.github.io/Let-s-Go-On-An-Adventure-/" rel="noopener noreferrer">
-							View →
-						</a>
-						<a href="https://github.com/rtkleong10/Let-s-Go-On-An-Adventure-/" rel="noopener noreferrer">
-							<img src="img/github-dark.svg" alt="View on GitHub">
-						</a>
+				<div class="portfolio-box" data-aos="fade-up">
+					<video class="portfolio-screenshot" autoplay preload muted loop>
+						<source src="img/portfolio/lets-go-on-an-adventure.mp4" type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+					<div class="hidden-details">
+						<h3 class="portfolio-header">Let's Go On An Adventure!</h3>
+						<p class="show-if-desktop">
+							Languages: JavaScript, HTML, CSS<br>
+							Technologies: Twine
+						</p>
+						<p class="show-if-mobile">
+							Twine, JavaScript, HTML, CSS
+						</p>
+						<div class="portfolio-links">
+							<a class="btn btn-white" href="https://rtkleong10.github.io/Let-s-Go-On-An-Adventure-/"
+								rel="noopener noreferrer">
+								<i class="fas fa-external-link-alt"></i>&nbsp;
+								View
+							</a>
+							<a class="github-btn" href="https://github.com/rtkleong10/Let-s-Go-On-An-Adventure-/"
+								rel="noopener noreferrer" aria-label="GitHub">
+								<i class="fab fa-github"></i>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 	</section>
 	<section id="resume">
-		<div class="grey-wrapper">
-			<div class="container grid">
-				<div class="main-wrapper">
-					<h2 class="lowerbar">Resume</h2>
-					<a class="download-btn" href="pdf/LeongKoRixieTiffany_Resume.pdf" rel="noopener noreferrer">
-						<img src="img/download.svg" alt="Download Resume">
-					</a>
-				</div>
-				<div class="centre-img-box">
-					<img class="resume-img" src="img/tiffany-resume.jpg" alt="">
-				</div>
+		<div class="container resume-display">
+			<div class="resume-description" data-aos="fade-right">
+				<h2 class="lowerbar">Resume</h2>
+				<a class="btn btn-blue" href="pdf/LeongKoRixieTiffany_Resume.pdf" rel="noopener noreferrer">
+					<i class="fas fa-download"></i>&nbsp;
+					Download
+				</a>
 			</div>
+			<img class="resume-img" src="img/tiffany-resume.jpg" alt="Tiffany's Resume" data-aos="fade-left">
 		</div>
 	</section>
 
 	<footer>
 		<div class="container">
 			<p>&copy; Tiffany Leong 2020</p>
-			<ul>
+			<ul class="footer-links">
 				<li>
-					<a href="mailto:rixietiffany@gmail.com" rel="noopener noreferrer">
-						<img src="img/email.svg" alt="Email">
+					<a href="https://github.com/rtkleong10" rel="noopener noreferrer" aria-label="GitHub">
+						<i class="fab fa-github"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://github.com/rtkleong10" rel="noopener noreferrer">
-						<img src="img/github.svg" alt="GitHub">
+					<a href="https://www.linkedin.com/in/rixietiffany/" rel="noopener noreferrer" aria-label="LinkedIn">
+						<i class="fab fa-linkedin-in"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://www.linkedin.com/in/rixietiffany/" rel="noopener noreferrer">
-						<img src="img/linkedin.svg" alt="LinkedIn">
+					<a href="mailto:rixietiffany@gmail.com" rel="noopener noreferrer" aria-label="Email">
+						<i class="far fa-envelope"></i>
 					</a>
 				</li>
 			</ul>
 		</div>
 	</footer>
+	<script src="vendor/aos/aos.js"></script>
+	<script src="vendor/js-cookie/js.cookie.min.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
