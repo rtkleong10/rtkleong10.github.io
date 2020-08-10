@@ -1,28 +1,93 @@
 // Update navbar to be fixed or not
 function updateNav() {
-	let nav = document.getElementsByTagName("nav")[0];
+	var nav = document.getElementsByTagName("nav")[0];
 
-	if (window.scrollY > 200)
+	var scrollY = window.scrollY;
+
+	if (scrollY > 200)
 		nav.classList.add("fixed");
 	else
 		nav.classList.remove("fixed");
+
+	var about = document.getElementById("about");
+	var aboutNav = document.getElementById("about-nav");
+
+	if (scrollY >= about.offsetTop && scrollY < about.offsetTop + about.offsetHeight - 10)
+		aboutNav.classList.add("nav-selected");
+	else
+		aboutNav.classList.remove("nav-selected");
+
+	var portfolio = document.getElementById("portfolio");
+	var portfolioNav = document.getElementById("portfolio-nav");
+
+	if (scrollY >= portfolio.offsetTop && scrollY < portfolio.offsetTop + portfolio.offsetHeight - 10)
+		portfolioNav.classList.add("nav-selected");
+	else
+		portfolioNav.classList.remove("nav-selected");
+
+	var resume = document.getElementById("resume");
+	var resumeNav = document.getElementById("resume-nav");
+
+	if (scrollY >= resume.offsetTop && scrollY < resume.offsetTop + resume.offsetHeight - 10)
+		resumeNav.classList.add("nav-selected");
+	else
+		resumeNav.classList.remove("nav-selected");
 }
 
 window.onscroll = updateNav;
 
-window.onload = () => {
-
+window.onload = function () {
+	AOS.init();
 	updateNav();
 
-
 	// Blur
-	let aTags = document.getElementsByTagName("a");
+	var aTags = document.getElementsByTagName("a");
+	var buttons = document.getElementsByTagName("button");
 
-	for (let i = 0; i < aTags.length; i++) {
-
-		let aTag = aTags[i];
-		aTag.addEventListener("click", () => {
+	for (var i = 0; i < aTags.length; i++) {
+		var aTag = aTags[i];
+		aTag.addEventListener("click", function () {
 			aTag.blur();
 		});
 	}
+
+	for (var i = 0; i < buttons.length; i++) {
+		var button = buttons[i];
+		button.addEventListener("click", function () {
+			button.blur();
+		});
+	}
+
+	// Check for dark mode preference
+	const DARK_MODE_COOKIE = "dark-mode";
+	var body = document.getElementsByTagName("body")[0];
+
+	function setDarkModeCookie(isDark) {
+		Cookies.set(DARK_MODE_COOKIE, isDark.toString(), { expires: 365 });
+	}
+	
+	if (Cookies.get(DARK_MODE_COOKIE)) {
+		if (Cookies.get(DARK_MODE_COOKIE) === "true")
+			body.classList.add("dark-mode");
+		
+	} else {
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			body.classList.add("dark-mode");
+			setDarkModeCookie(true);
+		}
+	}
+
+	// Dark Mode Toggle
+	var toggle = document.getElementById("dark-mode-toggle");
+
+	toggle.addEventListener("click", function () {
+		if (body.classList.contains("dark-mode")) {
+			body.classList.remove("dark-mode");
+			setDarkModeCookie(false);
+
+		} else {
+			body.classList.add("dark-mode");
+			setDarkModeCookie(true);
+		}
+	});
 };
