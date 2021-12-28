@@ -719,14 +719,14 @@ path {
 }
 
 .github-btn i {
-	vertical-align:middle;
+	vertical-align: middle;
 	font-size: 36px;
 	color: white;
-	transition: color 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 
 .github-btn:hover i, .github-btn:focus i {
-	color: var(--light-grey);
+	opacity: 0.5;
 }
 
 /* ---------- RESUME ---------- */
