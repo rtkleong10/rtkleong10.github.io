@@ -68,16 +68,18 @@ window.onload = function () {
 		Cookies.set(DARK_MODE_COOKIE, isDark.toString(), { expires: 365 });
 	}
 	
-	if (Cookies.get(DARK_MODE_COOKIE)) {
-		if (Cookies.get(DARK_MODE_COOKIE) === "true")
-			body.classList.add("dark-mode");
-		
-	} else {
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			body.classList.add("dark-mode");
-			setDarkModeCookie(true);
+	setTimeout(() => {
+		if (Cookies.get(DARK_MODE_COOKIE)) {
+			if (Cookies.get(DARK_MODE_COOKIE) === "true")
+				body.classList.add("dark-mode");
+			
+		} else {
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				body.classList.add("dark-mode");
+				setDarkModeCookie(true);
+			}
 		}
-	}
+	}, 300);
 
 	// Dark Mode Toggle
 	var toggle = document.getElementById("dark-mode-toggle");

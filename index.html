@@ -38,11 +38,9 @@
 <body>
 	<nav>
 		<div class="container navbar">
-			<a href="#" class="show-if-light">
-				<img class="logo" src="img/tiffany-logo.svg" alt="Tiffany logo.">
-			</a>
-			<a href="#" class="show-if-dark">
-				<img class="logo" src="img/tiffany-logo-dark.svg" alt="Tiffany logo.">
+			<a href="#" class="show-if">
+				<img class="logo show-if-light" src="img/tiffany-logo.svg" alt="Tiffany logo.">
+				<img class="logo show-if-dark" src="img/tiffany-logo-dark.svg" alt="Tiffany logo.">
 			</a>
 			<ul class="nav-links">
 				<li>
@@ -56,8 +54,10 @@
 				</li>
 				<li>
 					<button id="dark-mode-toggle" aria-label="Toggle dark mode">
-						<i class="show-if-dark far fa-sun"></i>
-						<i class="show-if-light far fa-moon"></i>
+						<div class="show-if">
+							<i class="show-if-light far fa-moon"></i>
+							<i class="show-if-dark far fa-sun"></i>
+						</div>
 					</button>
 				</li>
 			</ul>
