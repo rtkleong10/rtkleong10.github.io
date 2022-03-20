@@ -44,7 +44,17 @@
 
 /* body */
 html {
+	font-family: "Avenir Next", Arial, sans-serif;
+	font-size: 14px;
+	color: var(--dark-grey);
+	background-color: var(--faded-grey);
 	scroll-behavior: smooth;
+}
+
+@media (min-width: 576px) {
+	html {
+		font-size: 16px;
+	}
 }
 
 * {
@@ -54,9 +64,6 @@ html {
 }
 
 body {
-	color: var(--dark-grey);
-	font-family: "Avenir Next", Arial, sans-serif;
-	background-color: var(--faded-grey);
 	transition: all 0.3s ease-in-out;
 	transition-property: background-color, color;
 }
@@ -111,11 +118,11 @@ h1, h2, h3 {
 }
 
 h1 {	
-	font-size: 46px;
+	font-size: 2.75rem;
 }
 
 h2 {
-	font-size: 26px;
+	font-size: 1.5rem;
 }
 
 h2.lowerbar {
@@ -135,16 +142,16 @@ h2.lowerbar:after {
 }
 
 h3 {
-	font-size: 18px;
+	font-size: 1.125rem;
 }
 
 p {
-	font-size: 16px;
+	font-size: 1rem;
 	line-height: 150%;
 }
 
 p.lead {
-	font-size: 28px;
+	font-size: 1.75rem;
 }
 
 /* elements */
@@ -204,11 +211,11 @@ section {
 /* button */
 .btn {
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 8px 18px;
 	color: white;
 	font-family: "Avenir Next", Arial, sans-serif;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 1rem;
 	text-align: center;
 	border: 3px solid;
 	box-sizing: border-box;
@@ -305,7 +312,7 @@ nav.fixed {
 
 .nav-links li {
 	display: inline-block;
-	font-size: 18px;
+	font-size: 1.125rem;
 }
 
 .nav-links li:not(:first-of-type) {
@@ -684,7 +691,7 @@ path {
 }
 
 .portfolio-box .hidden-details p {
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .portfolio-box:hover .hidden-details {
@@ -720,7 +727,7 @@ path {
 
 .github-btn i {
 	vertical-align: middle;
-	font-size: 36px;
+	font-size: 2.25rem;
 	color: white;
 	transition: opacity 0.3s ease-in-out;
 }
@@ -777,7 +784,7 @@ footer .container {
 
 /* footer links */
 .footer-links {
-	font-size: 24px;
+	font-size: 1.5rem;
 	margin-bottom: 10px;
 }
 
@@ -806,9 +813,10 @@ footer .container {
 	outline: none;
 	background-color: transparent;
 	border: none;
-	font-size: 18px;
+	font-size: 1.125rem;
 	cursor: pointer;
 	transition: opacity 0.3s ease-in-out;
+	color: var(--dark-grey);
 }
 
 #dark-mode-toggle .show-if-dark {
@@ -817,4 +825,8 @@ footer .container {
 
 #dark-mode-toggle:hover, #dark-mode-toggle:focus {
 	opacity: 0.5;
+}
+
+#dark-mode-toggle i {
+	display: block;
 }
