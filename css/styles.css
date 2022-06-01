@@ -2,7 +2,7 @@
 /* colours */
 :root {
 	--green: #44c2a9;
-	--faded-grey: #EBF0EF;
+	--faded-grey: #ebf0ef;
 	--light-grey: #bbbbbb;
 	--dark-grey: #444444;
 	--darker-grey: #252626;
@@ -16,12 +16,7 @@
 	font-weight: 700;
 	font-display: swap;
 	src: url("../font/ubuntu/ubuntu-v13-latin-700.eot"); /* IE9 Compat Modes */
-	src: local("Ubuntu Bold"), local("Ubuntu-Bold"),
-		url("../font/ubuntu/ubuntu-v13-latin-700.eot?#iefix") format("embedded-opentype"),
-		url("../font/ubuntu/ubuntu-v13-latin-700.woff2") format("woff2"),
-		url("../font/ubuntu/ubuntu-v13-latin-700.woff") format("woff"),
-		url("../font/ubuntu/ubuntu-v13-latin-700.ttf") format("truetype"),
-		url("../font/ubuntu/ubuntu-v13-latin-700.svg#Ubuntu") format("svg");
+	src: local("Ubuntu Bold"), local("Ubuntu-Bold"), url("../font/ubuntu/ubuntu-v13-latin-700.eot?#iefix") format("embedded-opentype"), url("../font/ubuntu/ubuntu-v13-latin-700.woff2") format("woff2"), url("../font/ubuntu/ubuntu-v13-latin-700.woff") format("woff"), url("../font/ubuntu/ubuntu-v13-latin-700.ttf") format("truetype"), url("../font/ubuntu/ubuntu-v13-latin-700.svg#Ubuntu") format("svg");
 }
 
 @font-face {
@@ -29,8 +24,7 @@
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
-	src: local("Avenir Next"), local("Avenir-Next"),
-		url("../font/avenir-next/AvenirNextLTPro-Regular.otf") format("opentype");
+	src: local("Avenir Next"), local("Avenir-Next"), url("../font/avenir-next/AvenirNextLTPro-Regular.otf") format("opentype");
 }
 
 @font-face {
@@ -38,8 +32,7 @@
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
-	src: local("Avenir Next Bold"), local("Avenir-Next-Bold"),
-		url("../font/avenir-next/AvenirNextLTPro-Bold.otf") format("opentype");
+	src: local("Avenir Next Bold"), local("Avenir-Next-Bold"), url("../font/avenir-next/AvenirNextLTPro-Bold.otf") format("opentype");
 }
 
 /* body */
@@ -77,7 +70,8 @@ body.dark-mode {
 	position: relative;
 }
 
-.show-if-dark, .show-if-light {
+.show-if-dark,
+.show-if-light {
 	transition: opacity 0.3s ease-in-out;
 }
 
@@ -111,13 +105,15 @@ body.dark-mode {
 }
 
 /* typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	font-family: "Ubuntu", Arial, sans-serif;
 	font-weight: bold;
 	line-height: 150%;
 }
 
-h1 {	
+h1 {
 	font-size: 2.75rem;
 }
 
@@ -166,7 +162,8 @@ a {
 	color: white;
 }
 
-img, video {
+img,
+video {
 	display: block;
 }
 
@@ -341,7 +338,9 @@ nav.fixed {
 	background-color: white;
 }
 
-.nav-links a:hover:after, .nav-links a:focus:after, .nav-links a.nav-selected:after {
+.nav-links a:hover:after,
+.nav-links a:focus:after,
+.nav-links a.nav-selected:after {
 	width: 100%;
 }
 
@@ -403,7 +402,8 @@ nav.fixed {
 }
 
 /* shapes */
-.shapes-sm svg, .shapes-lg svg {
+.shapes-sm svg,
+.shapes-lg svg {
 	width: 100%;
 	height: auto;
 }
@@ -437,19 +437,22 @@ path {
 	transform-box: fill-box;
 }
 
-#shapes-lg-triangles path, #shapes-sm-triangles path {
+#shapes-lg-triangles path,
+#shapes-sm-triangles path {
 	-webkit-animation: clockwise-spin 6s linear infinite;
 	-moz-animation: clockwise-spin 6s linear infinite;
 	animation: clockwise-spin 6s linear infinite;
 }
 
-#shapes-lg-rectangles path, #shapes-sm-rectangles path {
+#shapes-lg-rectangles path,
+#shapes-sm-rectangles path {
 	-webkit-animation: anti-clockwise-spin 6s linear infinite;
 	-moz-animation: anti-clockwise-spin 6s linear infinite;
 	animation: anti-clockwise-spin 6s linear infinite;
 }
 
-#shapes-lg-circles path, #shapes-sm-circles path {
+#shapes-lg-circles path,
+#shapes-sm-circles path {
 	-webkit-animation: clockwise-spin 4s linear infinite;
 	-moz-animation: clockwise-spin 4s linear infinite;
 	animation: clockwise-spin 4s linear infinite;
@@ -590,10 +593,11 @@ path {
 	width: 100%;
 	border-radius: 50%;
 	margin-bottom: 40px;
+	border: white 4px solid;
 }
 
 .about-text {
-	max-width: 600px;
+	max-width: 800px;
 }
 
 @media (min-width: 576px) {
@@ -732,7 +736,8 @@ path {
 	transition: opacity 0.3s ease-in-out;
 }
 
-.github-btn:hover i, .github-btn:focus i {
+.github-btn:hover i,
+.github-btn:focus i {
 	opacity: 0.5;
 }
 
@@ -747,7 +752,7 @@ path {
 
 .resume-img {
 	width: 100%;
-	max-width: 400px;
+	max-width: 450px;
 }
 
 @media (min-width: 768px) {
@@ -758,13 +763,12 @@ path {
 		width: fit-content;
 		width: -moz-fit-content;
 	}
-	
+
 	.resume-description {
 		margin-bottom: 0;
 		margin-right: 60px;
 	}
 }
-
 
 /* ---------- FOOTER ---------- */
 footer .container {
@@ -798,7 +802,8 @@ footer .container {
 	margin-right: 10px;
 }
 
-.footer-links li:hover, .footer-links li:focus {
+.footer-links li:hover,
+.footer-links li:focus {
 	opacity: 0.5;
 }
 
@@ -823,7 +828,8 @@ footer .container {
 	color: white;
 }
 
-#dark-mode-toggle:hover, #dark-mode-toggle:focus {
+#dark-mode-toggle:hover,
+#dark-mode-toggle:focus {
 	opacity: 0.5;
 }
 
