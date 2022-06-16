@@ -590,10 +590,12 @@ path {
 
 .about-img {
 	max-width: 150px;
+	margin-bottom: 40px;
+}
+
+.about-img > img {
 	width: 100%;
 	border-radius: 50%;
-	margin-bottom: 40px;
-	border: white 4px solid;
 }
 
 .about-text {
