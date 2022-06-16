@@ -590,12 +590,15 @@ path {
 
 .about-img {
 	max-width: 150px;
-	margin-bottom: 40px;
-}
-
-.about-img > img {
 	width: 100%;
 	border-radius: 50%;
+	margin-bottom: 40px;
+	background-color: var(--faded-grey);
+	transition: background-color 0.3s ease-in-out;
+}
+
+.dark-mode .about-img {
+	background-color: var(--darker-grey);
 }
 
 .about-text {
