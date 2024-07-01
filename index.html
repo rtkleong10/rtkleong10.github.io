@@ -22,6 +22,26 @@
 	<link rel="stylesheet" href="vendor/aos/aos.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="css/styles.min.css">
+	<script>
+		(function() {
+			// Check for dark mode preference
+			var DARK_MODE_KEY = "dark-mode";
+			var docEl = document.documentElement;
+
+			if (localStorage.getItem(DARK_MODE_KEY)) {
+				if (localStorage.getItem(DARK_MODE_KEY) === "true")
+					docEl.classList.add("dark-mode");
+			} else {
+				if (
+					window.matchMedia &&
+					window.matchMedia("(prefers-color-scheme: dark)").matches
+				) {
+					docEl.classList.add("dark-mode");
+					setDarkModeStorage(true);
+				}
+			}
+		}())
+	</script>
 	<noscript>
         <style type="text/css">
             [data-aos] {
@@ -274,7 +294,6 @@
 		</div>
 	</footer>
 	<script src="vendor/aos/aos.js"></script>
-	<script src="vendor/js-cookie/js.cookie.min.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

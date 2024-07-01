@@ -60,38 +60,22 @@ window.onload = function () {
 		});
 	}
 
-	// Check for dark mode preference
-	const DARK_MODE_COOKIE = "dark-mode";
-	var body = document.getElementsByTagName("body")[0];
-
-	function setDarkModeCookie(isDark) {
-		Cookies.set(DARK_MODE_COOKIE, isDark.toString(), { expires: 365 });
-	}
-	
-	setTimeout(() => {
-		if (Cookies.get(DARK_MODE_COOKIE)) {
-			if (Cookies.get(DARK_MODE_COOKIE) === "true")
-				body.classList.add("dark-mode");
-			
-		} else {
-			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				body.classList.add("dark-mode");
-				setDarkModeCookie(true);
-			}
-		}
-	}, 300);
-
 	// Dark Mode Toggle
+	var DARK_MODE_KEY = "dark-mode";
+	var docEl = document.documentElement;
 	var toggle = document.getElementById("dark-mode-toggle");
 
-	toggle.addEventListener("click", function () {
-		if (body.classList.contains("dark-mode")) {
-			body.classList.remove("dark-mode");
-			setDarkModeCookie(false);
+	function setDarkMode(isDark) {
+		localStorage.setItem(DARK_MODE_KEY, isDark.toString());
+	}
 
+	toggle.addEventListener("click", function () {
+		if (docEl.classList.contains("dark-mode")) {
+			docEl.classList.remove("dark-mode");
+			setDarkMode(false);
 		} else {
-			body.classList.add("dark-mode");
-			setDarkModeCookie(true);
+			docEl.classList.add("dark-mode");
+			setDarkMode(true);
 		}
 	});
 };
